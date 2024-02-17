@@ -38,18 +38,32 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+body {
+  background-color: var(--hero-color);
+  color: var(--primary-text-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
+  max-width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
+}
+
+@media screen and (min-width:760px){.container{max-width:768px;}}
+
+@media screen and (min-width:(1158px)) {.container{max-width: 1158px;
+padding: 0 15px;}
+  
 }
 /* section padding */
 
 .hero-section {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin:0 auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   padding-top: 188px;
   padding-bottom: 188px;
 
@@ -78,13 +92,7 @@ img {
   margin-right: 0;
 }
 
-body {
-  background-color: var(--hero-color);
-  color: var(--primary-text-color);
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  margin: 0;
-}
+
 .logo,
 .nav-link,
 .adress-link {
@@ -475,7 +483,7 @@ body {
 }
 
 .portfolio-section {
-  padding-bottom: 120px;
+  padding: 120px 0;
 }
 .portfolio-navigation {
   border-bottom: 1px solid var(--text-color);
