@@ -80,23 +80,45 @@ justify-content: space-between;}
 }
 /*==========menu===mob===========*/
  .mob-men {
+  display: flex;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #ffffff;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
+.mob-men.is-open{opacity: 1;
+visibility: visible;
+pointer-events: auto;
+height: 100%;
+max-width: 320px;
+margin: 0 auto;
 
-.mob-men .menu-btn-x {
-  background-color: var(--second-accent-color);
+}
+
+
+
+.men-format{display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+padding: 72px 24px 40px 16px;}
+
+.menu-btn-x {
+  /* background-color: var(--second-accent-color); */
+  width: 24px;
+    height: 24px;
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-radius: 50%;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 24px;
+    right: 24px;   
 }
 
 .menu-list {
@@ -128,10 +150,6 @@ justify-content: space-between;}
   transition: color var(--time);
 }
 
-.menu-nav-list {
-  margin-bottom: 40px;
-}
-
 .menu-ad-list {
   display: flex;
   flex-direction: column;
@@ -158,6 +176,7 @@ justify-content: space-between;}
 
 
 .f-logo {
+  display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
@@ -182,7 +201,8 @@ justify-content: space-between;}
 .hero-section {
   /* max-width: 100%; */
   margin: 0 auto;
-  padding: 72px 52px;
+  padding-top: 72px;
+  padding-bottom: 72px;
   background-image: var(--l-gra), url(../images/Dark-bg-mb.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -193,7 +213,7 @@ justify-content: space-between;}
 @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {.hero-section{background-image: var(--l-gra), url(../images/Dark-bg-mb2x.jpg);}}
   
 .hero-title {
-  max-width: 496px;
+  max-width: 216px;
   margin-bottom: 72px;
   font-weight: 700;
   font-size: 36px;
@@ -211,7 +231,7 @@ justify-content: space-between;}
 
 .our-team-section {
   background-color: var(--second-accent-color);
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .doing-section {
@@ -625,7 +645,7 @@ gap:72px;}
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
 }
-.modal-close, .menu-btn-x {
+.modal-close{
   width: 24px;
   height: 24px;
   border: 1px solid hsla(0, 0%, 0%, 0.1);
@@ -770,6 +790,7 @@ ul.adress-list {
 .nav-link.link.curent {
   position: relative;
 }
+.nav-link.link{display: block;}
 
 .nav-link.link.curent::after {
   content: "";
@@ -790,9 +811,12 @@ ul.adress-list {
     display: none;
   }
 
-  h1.hero-title {
+  .hero-title {
     font-size: 56px;
+    max-width: 496px;
   }
+.hero-section{padding-top: 112px;
+padding-bottom: 112px;}
 
   .container {
     max-width: 768px;
@@ -825,31 +849,30 @@ ul.adress-list {
   li.feature-items {
     width: 356px;
   }
+.feature-items:nth-last-child(-n+2){margin-bottom: 0;}
 
   .list.our-team {
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 16px;
-    column-gap: 72px;
+    row-gap: 64px;
+    column-gap: 24px;
     justify-content: center;
   }
-
+.soc-container{margin: 0;}
   .f-soc-logo {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-  }
-
+    row-gap: 72px;
+    column-gap: 24px;
+}
+.f-logo,.f-soc-title{text-align: left;}
   .f-form .f-field {
     flex-direction: row;
   }
+.f-container{margin: 0;}
 
   .f-soc-logo .f-form-all {
-    margin-left: 0;
-  }
-
-  p.f-soc-title.forms {
-    margin-left: -377px;
+    margin: 0;
   }
 
   svg.f-form-icon {
@@ -866,6 +889,8 @@ ul.adress-list {
   }
 }
 
+@media screen and (min-width:768px) and (max-width:1157px){.our-team-container, .f-soc-logo{max-width: 584px;
+padding: 0;}}
 
 @media screen and (min-device-pixel-ratio: 2),
 (min-resolution: 192dpi),
@@ -880,7 +905,9 @@ ul.adress-list {
     max-width: 1158px;
     padding: 0 15px;
   }
-.hero-section{max-width: 1440px;}
+.hero-section{max-width: 1440px;
+padding-top: 188px;
+padding-bottom: 188px;}
 
   .logo {
     margin-right: 76px;
@@ -900,15 +927,19 @@ ul.adress-list {
     flex-direction: row;
     gap: 40px;
   }
-
+.f-soc-logo{justify-content:space-around;}
   .feature-items .feauter-item-box {
     display: flex;
   }
+.title{font-size: 20px;}
 
-  .feature-items {
-    margin-right: 24px;
+.main-text{font-weight: 400;}
+
+  .features-list .feature-items {
+    margin: 0;
     width: 264px;
   }
+.our-team-text.port-text{margin-bottom: 0;}
 
   .feature-items {
     margin: 0;
